@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Feli_Normar – Reparación de celulares, PC e impresoras en Nuevo Ixcatlán, Veracruz. Desbloqueo FRP y liberación de red a nivel global." />
+  <title>Feli_Normar | Reparación & Servicios Tecnológicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <style>
+    /* HERO */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 80px; position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(56,163,245,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,163,245,.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
+    }
+    .glow { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; pointer-events: none; }
+    .glow-1 { width: 480px; height: 480px; top: -10%; left: -15%; background: rgba(26,111,196,.22); }
+    .glow-2 { width: 320px; height: 320px; bottom: 5%; right: -10%; background: rgba(0,212,255,.15); }
+
+    .hero-content { position: relative; z-index: 1; padding: 3.5rem 0 2.5rem; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.3);
+      border-radius: 50px; padding: .35rem .95rem;
+      font-size: .78rem; font-weight: 700; color: var(--accent);
+      letter-spacing: .07em; margin-bottom: 1.3rem;
+      animation: fadeInDown .7s ease both;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+    .hero-title {
+      font-family: var(--font-head); font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 800; line-height: 1.08; color: var(--white);
+      animation: fadeInUp .7s .1s ease both;
+    }
+    .hero-title .accent { color: var(--accent); }
+
+    .hero-subtitle {
+      font-size: clamp(.92rem, 3vw, 1.1rem); color: var(--gray);
+      margin: 1.1rem 0 2rem; max-width: 540px; line-height: 1.7;
+      animation: fadeInUp .7s .2s ease both;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; animation: fadeInUp .7s .3s ease both; }
+
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      margin-top: 2.5rem; animation: fadeInUp .7s .4s ease both;
+    }
+    .stat-num { font-family: var(--font-head); font-size: 1.7rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: .78rem; color: var(--gray); font-weight: 600; }
+
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeInDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+
+    /* SERVICES SECTION */
+    #servicios { padding: 5rem 0; }
+    .services-header { text-align: center; margin-bottom: 3rem; }
+    .services-header .section-label { justify-content: center; }
+    .services-header .section-sub { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-btn {
+      background: var(--navy-card);
+      border: 1px solid rgba(56,163,245,.14);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.6rem;
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: .9rem; cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none; color: inherit;
+      position: relative; overflow: hidden;
+    }
+    .service-btn::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(56,163,245,.06), transparent);
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .service-btn:hover::after { opacity: 1; }
+    .service-btn:hover {
+      border-color: rgba(56,163,245,.4);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-5px);
+    }
+
+    .svc-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue), rgba(56,163,245,.5));
+      display: grid; place-items: center;
+      font-size: 1.25rem; color: #fff;
+      box-shadow: 0 4px 14px rgba(26,111,196,.4);
+      flex-shrink: 0;
+    }
+
+    .svc-body { flex: 1; }
+    .svc-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: .35rem; }
+    .svc-desc { font-size: .85rem; color: var(--gray); line-height: 1.55; }
+
+    .svc-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag {
+      background: rgba(56,163,245,.12); border: 1px solid rgba(56,163,245,.22);
+      color: var(--sky); font-size: .7rem; font-weight: 700;
+      padding: .18rem .55rem; border-radius: 50px;
+    }
+
+    .svc-arrow {
+      align-self: flex-end; color: var(--accent); font-size: .85rem;
+      opacity: 0; transform: translateX(-6px);
+      transition: all var(--transition);
+    }
+    .service-btn:hover .svc-arrow { opacity: 1; transform: translateX(0); }
+
+    /* CONTACT STRIP */
+    .contact-strip {
+      margin-top: 3.5rem;
+      background: linear-gradient(135deg, rgba(37,211,102,.08), rgba(26,111,196,.1));
+      border: 1px solid rgba(37,211,102,.25);
+      border-radius: var(--radius-lg); padding: 1.8rem 2rem;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1.2rem;
+    }
+    .contact-strip p { color: var(--gray); font-size: .95rem; }
+    .contact-strip strong { color: var(--white); }
+
+    /* ABOUT / PERFIL */
+    #perfil { padding: 5rem 0; background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%); }
+    .perfil-grid {
+      display: grid; gap: 2.5rem; align-items: center;
+    }
+    @media (min-width: 768px) {
+      .perfil-grid { grid-template-columns: 260px 1fr; }
+    }
+
+    .avatar-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .avatar-frame {
+      width: 200px; height: 200px; border-radius: 50%;
+      border: 3px solid rgba(0,212,255,.4);
+      box-shadow: 0 0 32px rgba(0,212,255,.2);
+      overflow: hidden; background: var(--navy-card);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .avatar-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .avatar-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: var(--gray); font-size: .8rem; text-align: center; padding: 1rem;
+    }
+    .avatar-placeholder i { font-size: 3.5rem; color: rgba(56,163,245,.3); }
+    .avatar-name {
+      font-family: var(--font-head); font-size: 1.1rem; font-weight: 800;
+      color: var(--white); text-align: center;
+    }
+    .avatar-role {
+      font-size: .82rem; color: var(--accent); font-weight: 700;
+      text-align: center; letter-spacing: .05em;
+    }
+
+    .perfil-info .section-label { margin-bottom: .5rem; }
+    .perfil-bio { color: var(--gray); font-size: .95rem; line-height: 1.75; margin-bottom: 1.5rem; }
+
+    .edu-card {
+      background: var(--navy-card); border: 1px solid rgba(56,163,245,.15);
+      border-radius: var(--radius); padding: 1.2rem 1.4rem;
+      display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;
+    }
+    .edu-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      display: grid; place-items: center; font-size: 1.1rem; color: #fff;
+    }
+    .edu-body h4 { font-family: var(--font-head); font-size: .97rem; font-weight: 700; color: var(--white); margin-bottom: .2rem; }
+    .edu-body p { font-size: .83rem; color: var(--gray); }
+    .edu-body .edu-badge {
+      display: inline-block; margin-top: .4rem;
+      background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.3);
+      color: var(--accent); font-size: .72rem; font-weight: 700;
+      padding: .15rem .55rem; border-radius: 50px; letter-spacing: .05em;
+    }
+
+    .perfil-contact { display: flex; flex-direction: column; gap: .7rem; margin-top: 1.2rem; }
+    .pc-item {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .88rem; color: var(--gray);
+    }
+    .pc-item i { color: var(--accent); width: 18px; text-align: center; flex-shrink: 0; }
+    .pc-item a { color: var(--sky); transition: color var(--transition); }
+    .pc-item a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-mobile-screen"></i></div>
+        Feli_<span>Normar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="pages/servicios.html"><i class="fas fa-wrench"></i> Servicios</a></li>
+        <li><a href="pages/remoto.html"><i class="fas fa-globe"></i> Remoto</a></li>
+        <li><a href="pages/seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad</a></li>
+        <li><a href="pages/cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a></li>
+      </ul>
+      <a href="https://wa.me/522831156502" target="_blank" class="nav-wa btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <a href="pages/servicios.html"><i class="fas fa-wrench"></i> Servicios Locales</a>
+  <a href="pages/remoto.html"><i class="fas fa-globe"></i> Servicio Remoto</a>
+  <a href="pages/seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad / IMEI</a>
+  <a href="pages/cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a>
+  <a href="https://wa.me/522831156502" target="_blank" class="menu-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="dot"></div>
+        Disponible ahora · Nuevo Ixcatlán, Veracruz
+      </div>
+      <h1 class="hero-title">
+        Tu Experto en<br>
+        <span class="accent">Reparación</span><br>
+        Tecnológica
+      </h1>
+      <p class="hero-subtitle">
+        Reparamos celulares, impresoras y computadoras de forma <strong>local y presencial</strong> en Nuevo Ixcatlán, y ofrecemos <strong>desbloqueo FRP y liberación de red</strong> a nivel mundial.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/cotizacion.html" class="btn btn-primary">
+          <i class="fas fa-file-invoice-dollar"></i> Obtener Cotización
+        </a>
+        <a href="https://wa.me/522831156502?text=Hola%20Feli_Normar,%20quiero%20información%20sobre%20sus%20servicios." target="_blank" class="btn btn-wa">
+          <i class="fab fa-whatsapp"></i> Escribir al WhatsApp
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">100%</div><div class="stat-label">Clientes Satisfechos</div></div>
+        <div><div class="stat-num">24h</div><div class="stat-label">Respuesta Rápida</div></div>
+        <div><div class="stat-num">Global</div><div class="stat-label">Alcance Remoto</div></div>
+        <div><div class="stat-num">FRP</div><div class="stat-label">+ Liberación de Red</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS GRID -->
+<section id="servicios">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label"><i class="fas fa-th-large"></i> Nuestros Servicios</div>
+      <h2 class="section-title">¿Qué necesitas hoy?</h2>
+      <p class="section-sub">Selecciona el servicio que buscas para ver todos los detalles, precios y cómo solicitarlo.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <a href="pages/servicios.html#pantallas" class="service-btn reveal">
+        <div class="svc-icon"><i class="fas fa-mobile-screen-button"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Cambio de Pantallas</div>
+          <div class="svc-desc">iPhone y Android. Piezas de calidad con garantía.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">iPhone</span><span class="tag">Samsung</span><span class="tag">Xiaomi</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/servicios.html#carga" class="service-btn reveal">
+        <div class="svc-icon"><i class="fas fa-plug"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Puertos de Carga</div>
+          <div class="svc-desc">USB-C, Lightning y Micro-USB que no cargan o cargan intermitente.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">USB-C</span><span class="tag">Lightning</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/servicios.html#bateria" class="service-btn reveal">
+        <div class="svc-icon"><i class="fas fa-battery-half"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Cambio de Batería</div>
+          <div class="svc-desc">Baterías agotadas o infladas. Recupera la autonomía de tu equipo.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">iPhone</span><span class="tag">Android</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/servicios.html#impresoras" class="service-btn reveal">
+        <div class="svc-icon"><i class="fas fa-print"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Reparación de Impresoras</div>
+          <div class="svc-desc">Inyección de tinta y láser. Cabezales, rollos y sensores.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">Epson</span><span class="tag">Canon</span><span class="tag">HP</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/servicios.html#pc" class="service-btn reveal">
+        <div class="svc-icon"><i class="fas fa-desktop"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Mantenimiento de PC</div>
+          <div class="svc-desc">Limpieza interna, pasta térmica, diagnóstico y reparación.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">Windows</span><span class="tag">Linux</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/servicios.html#software" class="service-btn reveal">
+        <div class="svc-icon"><i class="fas fa-code"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Software & Sistemas</div>
+          <div class="svc-desc">Windows, Linux, Office, eliminación de virus y optimización.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">Win 10/11</span><span class="tag">Office 365</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/remoto.html" class="service-btn reveal">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#0a7c4a,var(--accent))"><i class="fas fa-satellite-dish"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Desbloqueo FRP Remoto</div>
+          <div class="svc-desc">Quita la verificación de cuenta Google desde cualquier parte del mundo.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">Global</span><span class="tag">AnyDesk</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/remoto.html#red" class="service-btn reveal">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#7c3a0a,var(--accent))"><i class="fas fa-signal"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Liberación de Red</div>
+          <div class="svc-desc">Desbloquea cualquier carrier en USA y a nivel mundial.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">USA</span><span class="tag">México</span><span class="tag">Global</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/seguridad.html" class="service-btn reveal">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#1a6fc4,#7c0a7c)"><i class="fas fa-shield-halved"></i></div>
+        <div class="svc-body">
+          <div class="svc-title">Verificación Blacklist / IMEI</div>
+          <div class="svc-desc">Consulta si un equipo está reportado como robado antes de comprarlo.</div>
+          <div class="svc-tags" style="margin-top:.6rem;">
+            <span class="tag">IMEI</span><span class="tag">Blacklist</span>
+          </div>
+        </div>
+        <span class="svc-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+
+    <div class="contact-strip reveal">
+      <div>
+        <strong>¿No encuentras lo que buscas?</strong>
+        <p>Escríbenos directamente y te orientamos sin compromiso.</p>
+      </div>
+      <a href="https://wa.me/522831156502?text=Hola,%20tengo%20una%20consulta%20sobre%20sus%20servicios." target="_blank" class="btn btn-wa">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section id="perfil">
+  <div class="container">
+    <div class="perfil-grid reveal">
+
+      <!-- Avatar -->
+      <div class="avatar-wrap">
+        <div class="avatar-frame">
+          <!-- Reemplaza esta imagen con tu foto: <img src="tu-foto.jpg" alt="Felipe Norberto"> -->
+          <div class="avatar-placeholder">
+            <i class="fas fa-user-circle"></i>
+            <span>Agrega tu foto aquí</span>
+          </div>
+        </div>
+        <div class="avatar-name">Felipe Norberto</div>
+        <div class="avatar-role">Ing. en Sistemas Computacionales</div>
+      </div>
+
+      <!-- Info -->
+      <div class="perfil-info">
+        <div class="section-label"><i class="fas fa-id-card"></i> Sobre mí</div>
+        <h2 class="section-title">Quién está detrás de<br><span style="color:var(--accent)">Feli_Normar</span></h2>
+        <p class="perfil-bio">
+          Soy Felipe Norberto, Ingeniero en Sistemas Computacionales egresado del Tecnológico Nacional de México.
+          Me apasiona la tecnología y me dedico a brindar soluciones de reparación y soporte técnico de calidad,
+          tanto de forma presencial en Nuevo Ixcatlán, Veracruz, como de manera remota a nivel global.
+        </p>
+
+        <!-- Formación académica -->
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h4>Ingeniería en Sistemas Computacionales</h4>
+            <p>Tecnológico Nacional de México — Campus Tuxtepec</p>
+            <span class="edu-badge">Egresado</span>
+          </div>
+        </div>
+
+        <!-- Contacto -->
+        <div class="perfil-contact">
+          <div class="pc-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:[email]">[email]</a>
+          </div>
+          <div class="pc-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://maps.app.goo.gl/oEcyVdW6i9ugbWaA8" target="_blank" rel="noopener">
+              Nuevo Ixcatlán, Veracruz — Ver ubicación en Maps
+            </a>
+          </div>
+          <div class="pc-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/522831156502" target="_blank" rel="noopener">+52 283 115 6502</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Feli_<span>Normar</span></div>
+      <div class="footer-links">
+        <a href="pages/servicios.html">Servicios</a>
+        <a href="pages/remoto.html">Remoto</a>
+        <a href="pages/seguridad.html">Seguridad</a>
+        <a href="pages/cotizacion.html">Cotizar</a>
+      </div>
+      <div class="footer-copy">© 2026 Feli_Normar · Felipe Norberto · Todos los derechos reservados · Nuevo Ixcatlán, Ver.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/522831156502" target="_blank" id="wa-fab" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    ham.classList.remove('open'); menu.classList.remove('open');
+  }));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

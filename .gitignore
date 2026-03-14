@@ -1,0 +1,23 @@
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporales
+*.tmp
+*.bak
+*.swp
+
+# Node (por si usas herramientas de build en el futuro)
+node_modules/
+dist/
+.env

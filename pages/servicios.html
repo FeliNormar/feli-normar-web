@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Servicios locales de reparación en Nuevo Ixcatlán, Veracruz – pantallas, baterías, impresoras, PC y software." />
+  <title>Servicios Locales | Feli_Normar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+  <style>
+    .page-hero {
+      padding: 110px 0 3rem; background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+      border-bottom: 1px solid rgba(56,163,245,.1);
+    }
+    .page-hero .section-label { margin-bottom: .6rem; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      color: var(--gray); font-size: .85rem; font-weight: 600;
+      margin-bottom: 1.2rem; transition: color var(--transition);
+    }
+    .back-link:hover { color: var(--accent); }
+
+    .services-list { padding: 3.5rem 0 5rem; }
+
+    .service-detail {
+      background: var(--navy-card); border: 1px solid rgba(56,163,245,.12);
+      border-radius: var(--radius-lg); padding: 2rem;
+      margin-bottom: 1.5rem; transition: all var(--transition);
+      scroll-margin-top: 90px;
+    }
+    .service-detail:hover { border-color: rgba(56,163,245,.3); box-shadow: var(--shadow-glow); }
+
+    .sd-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .sd-icon {
+      width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), rgba(56,163,245,.5));
+      display: grid; place-items: center; font-size: 1.3rem; color: #fff;
+      box-shadow: 0 4px 14px rgba(26,111,196,.4);
+    }
+    .sd-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 800; color: var(--white); }
+    .sd-subtitle { font-size: .82rem; color: var(--gray); margin-top: .15rem; }
+
+    .sd-body { display: grid; gap: 1.2rem; }
+    .sd-desc { color: var(--gray); font-size: .93rem; line-height: 1.7; }
+
+    .sd-features { display: flex; flex-direction: column; gap: .55rem; }
+    .sd-feature {
+      display: flex; align-items: flex-start; gap: .7rem;
+      font-size: .88rem; color: var(--gray);
+    }
+    .sd-feature i { color: var(--accent); margin-top: .15rem; flex-shrink: 0; }
+
+    .sd-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag {
+      background: rgba(56,163,245,.12); border: 1px solid rgba(56,163,245,.22);
+      color: var(--sky); font-size: .72rem; font-weight: 700;
+      padding: .2rem .6rem; border-radius: 50px;
+    }
+
+    .sd-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: .5rem; }
+
+    @media (min-width: 640px) {
+      .sd-body { grid-template-columns: 1fr 1fr; }
+      .sd-desc { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-mobile-screen"></i></div>
+        Feli_<span>Normar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="servicios.html" class="active"><i class="fas fa-wrench"></i> Servicios</a></li>
+        <li><a href="remoto.html"><i class="fas fa-globe"></i> Remoto</a></li>
+        <li><a href="seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad</a></li>
+        <li><a href="cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a></li>
+      </ul>
+      <a href="https://wa.me/522831156502" target="_blank" class="nav-wa btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <a href="servicios.html"><i class="fas fa-wrench"></i> Servicios Locales</a>
+  <a href="remoto.html"><i class="fas fa-globe"></i> Servicio Remoto</a>
+  <a href="seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad / IMEI</a>
+  <a href="cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a>
+  <a href="https://wa.me/522831156502" target="_blank" class="menu-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Inicio</a>
+    <div class="section-label"><i class="fas fa-map-marker-alt"></i> Servicios Locales — Nuevo Ixcatlán, Ver.</div>
+    <h1 class="section-title">Reparación Profesional<br>en tu Ciudad</h1>
+    <p class="section-sub">Diagnóstico sin costo en la mayoría de los casos. Repuestos de calidad con garantía.</p>
+  </div>
+</div>
+
+<section class="services-list">
+  <div class="container">
+
+    <div class="service-detail reveal" id="pantallas">
+      <div class="sd-header">
+        <div class="sd-icon"><i class="fas fa-mobile-screen-button"></i></div>
+        <div>
+          <div class="sd-title">Cambio de Pantallas</div>
+          <div class="sd-subtitle">Celulares iPhone y Android</div>
+        </div>
+      </div>
+      <div class="sd-body">
+        <p class="sd-desc">Reemplazo de pantallas rotas, con fallas de tacto o con manchas en la imagen. Trabajamos con piezas de alta calidad y ofrecemos garantía en la reparación.</p>
+        <div class="sd-features">
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Pantallas OLED y LCD originales y compatibles</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Diagnóstico gratuito antes de cotizar</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Garantía en la pieza instalada</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Entrega el mismo día en la mayoría de casos</div>
+        </div>
+        <div>
+          <div class="sd-tags">
+            <span class="tag">iPhone</span><span class="tag">Samsung</span>
+            <span class="tag">Xiaomi</span><span class="tag">Motorola</span><span class="tag">Huawei</span>
+          </div>
+          <div class="sd-actions" style="margin-top:1rem;">
+            <a href="https://wa.me/522831156502?text=Hola,%20necesito%20cambio%20de%20pantalla%20en%20mi%20equipo." target="_blank" class="btn btn-wa">
+              <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+            </a>
+            <a href="cotizacion.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-detail reveal" id="carga">
+      <div class="sd-header">
+        <div class="sd-icon"><i class="fas fa-plug"></i></div>
+        <div>
+          <div class="sd-title">Puertos de Carga</div>
+          <div class="sd-subtitle">USB-C · Lightning · Micro-USB</div>
+        </div>
+      </div>
+      <div class="sd-body">
+        <p class="sd-desc">Reparación o sustitución de conectores de carga que no funcionan, cargan lento o de forma intermitente. También limpieza de puertos con pelusa o suciedad.</p>
+        <div class="sd-features">
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Diagnóstico para determinar si es limpieza o cambio</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Soldadura de precisión en conectores SMD</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Compatible con todos los modelos actuales</div>
+        </div>
+        <div>
+          <div class="sd-tags">
+            <span class="tag">USB-C</span><span class="tag">Lightning</span><span class="tag">MicroUSB</span>
+          </div>
+          <div class="sd-actions" style="margin-top:1rem;">
+            <a href="https://wa.me/522831156502?text=Hola,%20mi%20celular%20no%20carga%20bien,%20necesito%20revisión." target="_blank" class="btn btn-wa">
+              <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+            </a>
+            <a href="cotizacion.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-detail reveal" id="bateria">
+      <div class="sd-header">
+        <div class="sd-icon"><i class="fas fa-battery-half"></i></div>
+        <div>
+          <div class="sd-title">Cambio de Batería</div>
+          <div class="sd-subtitle">Recupera la autonomía de tu equipo</div>
+        </div>
+      </div>
+      <div class="sd-body">
+        <p class="sd-desc">Sustitución de baterías agotadas que no duran o que se han inflado. Una batería nueva puede transformar completamente la experiencia de uso de tu celular.</p>
+        <div class="sd-features">
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Baterías de alta capacidad con certificación</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Proceso seguro sin daños al equipo</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Garantía de 3 meses en la batería</div>
+        </div>
+        <div>
+          <div class="sd-tags">
+            <span class="tag">iPhone</span><span class="tag">Android</span><span class="tag">Original</span>
+          </div>
+          <div class="sd-actions" style="margin-top:1rem;">
+            <a href="https://wa.me/522831156502?text=Hola,%20necesito%20cambio%20de%20batería%20para%20mi%20equipo." target="_blank" class="btn btn-wa">
+              <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+            </a>
+            <a href="cotizacion.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-detail reveal" id="impresoras">
+      <div class="sd-header">
+        <div class="sd-icon"><i class="fas fa-print"></i></div>
+        <div>
+          <div class="sd-title">Reparación de Impresoras</div>
+          <div class="sd-subtitle">Inyección de tinta y láser</div>
+        </div>
+      </div>
+      <div class="sd-body">
+        <p class="sd-desc">Diagnóstico y reparación de impresoras con problemas de impresión, atascos de papel, cabezales tapados, errores de sistema o fallas mecánicas.</p>
+        <div class="sd-features">
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Limpieza profunda de cabezales de inyección</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Reparación de rollos y sensores de papel</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Reset de almohadillas y contadores</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Configuración de red e impresión inalámbrica</div>
+        </div>
+        <div>
+          <div class="sd-tags">
+            <span class="tag">Epson</span><span class="tag">Canon</span><span class="tag">HP</span><span class="tag">Brother</span>
+          </div>
+          <div class="sd-actions" style="margin-top:1rem;">
+            <a href="https://wa.me/522831156502?text=Hola,%20tengo%20problemas%20con%20mi%20impresora%20y%20necesito%20revisión." target="_blank" class="btn btn-wa">
+              <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+            </a>
+            <a href="cotizacion.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-detail reveal" id="pc">
+      <div class="sd-header">
+        <div class="sd-icon"><i class="fas fa-desktop"></i></div>
+        <div>
+          <div class="sd-title">Mantenimiento de PC</div>
+          <div class="sd-subtitle">Escritorio y laptops</div>
+        </div>
+      </div>
+      <div class="sd-body">
+        <p class="sd-desc">Mantenimiento preventivo y correctivo en computadoras. Limpieza interna, cambio de pasta térmica, diagnóstico de hardware y reparación de fallas.</p>
+        <div class="sd-features">
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Limpieza interna y cambio de pasta térmica</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Diagnóstico de RAM, disco duro y fuente</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Reparación de laptops con pantalla o teclado dañado</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Actualización de componentes (SSD, RAM)</div>
+        </div>
+        <div>
+          <div class="sd-tags">
+            <span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Laptop</span><span class="tag">Desktop</span>
+          </div>
+          <div class="sd-actions" style="margin-top:1rem;">
+            <a href="https://wa.me/522831156502?text=Hola,%20necesito%20mantenimiento%20para%20mi%20computadora." target="_blank" class="btn btn-wa">
+              <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+            </a>
+            <a href="cotizacion.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-detail reveal" id="software">
+      <div class="sd-header">
+        <div class="sd-icon"><i class="fas fa-code"></i></div>
+        <div>
+          <div class="sd-title">Software & Sistemas</div>
+          <div class="sd-subtitle">Instalación, configuración y optimización</div>
+        </div>
+      </div>
+      <div class="sd-body">
+        <p class="sd-desc">Instalación y configuración de sistemas operativos, paquetería de oficina y software empresarial. Eliminación de virus, malware y optimización del rendimiento.</p>
+        <div class="sd-features">
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Instalación de Windows 10/11 y Linux</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Configuración de Office 365 y software empresarial</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Eliminación de virus, ransomware y malware</div>
+          <div class="sd-feature"><i class="fas fa-check-circle"></i> Optimización y limpieza del sistema</div>
+        </div>
+        <div>
+          <div class="sd-tags">
+            <span class="tag">Win 10/11</span><span class="tag">Ubuntu</span><span class="tag">Office 365</span>
+          </div>
+          <div class="sd-actions" style="margin-top:1rem;">
+            <a href="https://wa.me/522831156502?text=Hola,%20necesito%20ayuda%20con%20software%20en%20mi%20computadora." target="_blank" class="btn btn-wa">
+              <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+            </a>
+            <a href="cotizacion.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Feli_<span>Normar</span></div>
+      <div class="footer-links">
+        <a href="../index.html">Inicio</a>
+        <a href="remoto.html">Remoto</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="cotizacion.html">Cotizar</a>
+      </div>
+      <div class="footer-copy">© 2026 Feli_Normar · Felipe Norberto · Todos los derechos reservados · Nuevo Ixcatlán, Ver.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/522831156502" target="_blank" id="wa-fab" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); menu.classList.remove('open'); }));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
