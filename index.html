@@ -213,6 +213,14 @@
     .pc-item i { color: var(--accent); width: 18px; text-align: center; flex-shrink: 0; }
     .pc-item a { color: var(--sky); transition: color var(--transition); }
     .pc-item a:hover { color: var(--accent); }
+
+    /* UBICACIÓN */
+    .ubicacion-grid {
+      display: grid; gap: 2.5rem; align-items: start;
+    }
+    @media (min-width: 768px) {
+      .ubicacion-grid { grid-template-columns: 1fr 1.3fr; }
+    }
   </style>
 </head>
 <body>
@@ -229,6 +237,7 @@
         <li><a href="pages/remoto.html"><i class="fas fa-globe"></i> Remoto</a></li>
         <li><a href="pages/seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad</a></li>
         <li><a href="pages/cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a></li>
+        <li><a href="#ubicacion"><i class="fas fa-map-location-dot"></i> Ubicación</a></li>
       </ul>
       <a href="https://wa.me/522831156502" target="_blank" class="nav-wa btn">
         <i class="fab fa-whatsapp"></i> WhatsApp
@@ -243,6 +252,7 @@
   <a href="pages/remoto.html"><i class="fas fa-globe"></i> Servicio Remoto</a>
   <a href="pages/seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad / IMEI</a>
   <a href="pages/cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a>
+  <a href="#ubicacion"><i class="fas fa-map-location-dot"></i> Cómo llegar</a>
   <a href="https://wa.me/522831156502" target="_blank" class="menu-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 </div>
 
@@ -467,6 +477,77 @@
             <a href="https://wa.me/522831156502" target="_blank" rel="noopener">+52 283 115 6502</a>
           </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO LLEGAR -->
+<section id="ubicacion" style="padding:5rem 0; background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);">
+  <div class="container">
+    <div class="reveal ubicacion-grid">
+
+      <div>
+        <div class="section-label"><i class="fas fa-map-marker-alt"></i> Ubicación</div>
+        <h2 class="section-title">¿Cómo llegar?</h2>
+        <p class="section-sub" style="margin-bottom:1.8rem;">
+          Estamos en <strong style="color:var(--white)">Nuevo Ixcatlán, Veracruz</strong>. Puedes encontrarnos fácilmente en el mapa o escribirnos por WhatsApp para indicaciones precisas.
+        </p>
+
+        <!-- Detalles de dirección -->
+        <div style="display:flex; flex-direction:column; gap:.9rem; margin-bottom:1.8rem;">
+          <div style="display:flex; align-items:center; gap:.85rem;">
+            <div style="width:46px;height:46px;border-radius:12px;background:rgba(56,163,245,.12);border:1px solid rgba(56,163,245,.2);display:grid;place-items:center;color:var(--accent);font-size:1rem;flex-shrink:0;">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <div style="font-size:.78rem;color:var(--gray);">Dirección</div>
+              <div style="font-size:.93rem;font-weight:600;color:var(--white);">Nuevo Ixcatlán, Veracruz, México</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:.85rem;">
+            <div style="width:46px;height:46px;border-radius:12px;background:rgba(56,163,245,.12);border:1px solid rgba(56,163,245,.2);display:grid;place-items:center;color:var(--accent);font-size:1rem;flex-shrink:0;">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <div style="font-size:.78rem;color:var(--gray);">WhatsApp</div>
+              <div style="font-size:.93rem;font-weight:600;color:var(--white);">+52 283 115 6502</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:.85rem;">
+            <div style="width:46px;height:46px;border-radius:12px;background:rgba(56,163,245,.12);border:1px solid rgba(56,163,245,.2);display:grid;place-items:center;color:var(--accent);font-size:1rem;flex-shrink:0;">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <div style="font-size:.78rem;color:var(--gray);">Horario</div>
+              <div style="font-size:.93rem;font-weight:600;color:var(--white);">Lun – Sáb · 9:00 – 19:00</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:.8rem;">
+          <a href="https://maps.app.goo.gl/oEcyVdW6i9ugbWaA8" target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fas fa-map-location-dot"></i> Abrir en Google Maps
+          </a>
+          <a href="https://wa.me/522831156502?text=Hola,%20¿me%20puedes%20dar%20indicaciones%20para%20llegar?" target="_blank" class="btn btn-wa">
+            <i class="fab fa-whatsapp"></i> Pedir indicaciones
+          </a>
+        </div>
+      </div>
+
+      <!-- Mapa embebido -->
+      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(56,163,245,.2);box-shadow:var(--shadow-glow);min-height:380px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3797.4!2d-96.4800!3d17.6414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c5b0e0e0e0e0e1%3A0x0!2sNuevo+Ixcatl%C3%A1n%2C+Veracruz%2C+M%C3%A9xico!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+          id="mapa-embed"
+          width="100%" height="380"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Feli_Normar — Nuevo Ixcatlán, Veracruz">
+        </iframe>
       </div>
 
     </div>
