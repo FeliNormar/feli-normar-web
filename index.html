@@ -221,6 +221,36 @@
     @media (min-width: 768px) {
       .ubicacion-grid { grid-template-columns: 1fr 1.3fr; }
     }
+
+    /* REDES SOCIALES */
+    .social-pill {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .4rem .9rem; border-radius: 50px;
+      font-size: .82rem; font-weight: 700;
+      transition: all var(--transition); text-decoration: none;
+    }
+    .social-pill:hover { transform: translateY(-2px); filter: brightness(1.2); }
+
+    /* VIDEOS */
+    #videos { padding: 5rem 0; background: var(--navy-mid); }
+    .videos-header { text-align: center; margin-bottom: 2.5rem; }
+    .videos-header .section-label { justify-content: center; }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.3rem;
+    }
+    .video-card {
+      background: var(--navy-card); border: 1px solid rgba(56,163,245,.12);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: all var(--transition);
+    }
+    .video-card:hover { border-color: rgba(56,163,245,.35); box-shadow: var(--shadow-glow); transform: translateY(-4px); }
+    .video-card iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
+    .video-card-body { padding: .9rem 1.1rem; }
+    .video-card-body h4 { font-family: var(--font-head); font-size: .97rem; font-weight: 700; color: var(--white); margin-bottom: .2rem; }
+    .video-card-body p { font-size: .82rem; color: var(--gray); }
+    .videos-cta { text-align: center; margin-top: 2rem; }
   </style>
 </head>
 <body>
@@ -468,7 +498,7 @@
           </div>
           <div class="pc-item">
             <i class="fas fa-map-marker-alt"></i>
-            <a href="https://maps.app.goo.gl/oEcyVdW6i9ugbWaA8" target="_blank" rel="noopener">
+            <a href="https://maps.app.goo.gl/DGCahbE5wsL5DxNm8" target="_blank" rel="noopener">
               Nuevo Ixcatlán, Veracruz — Ver ubicación en Maps
             </a>
           </div>
@@ -477,8 +507,57 @@
             <a href="https://wa.me/522831156502" target="_blank" rel="noopener">+52 283 115 6502</a>
           </div>
         </div>
+
+        <!-- Redes sociales -->
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem;">
+          <a href="https://www.facebook.com/share/1AgCJ9qk3k/" target="_blank" rel="noopener" class="social-pill" style="background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.35);color:#4a9eff;">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="https://www.instagram.com/streem_dr" target="_blank" rel="noopener" class="social-pill" style="background:rgba(225,48,108,.12);border:1px solid rgba(225,48,108,.35);color:#f77ab0;">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://www.tiktok.com/@felinormar" target="_blank" rel="noopener" class="social-pill" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:var(--white);">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+          <a href="https://youtube.com/@felinormar" target="_blank" rel="noopener" class="social-pill" style="background:rgba(255,0,0,.12);border:1px solid rgba(255,0,0,.3);color:#ff6b6b;">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+        </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="container">
+    <div class="videos-header reveal">
+      <div class="section-label"><i class="fab fa-youtube"></i> Trabajos realizados</div>
+      <h2 class="section-title">Mira nuestro trabajo</h2>
+      <p class="section-sub" style="margin:0 auto;">Reparaciones reales documentadas en video. Transparencia total en cada proceso.</p>
+    </div>
+
+    <div class="videos-grid">
+      <!-- Agrega aquí tus videos de YouTube — reemplaza VIDEO_ID con el ID de cada video -->
+      <!-- Ejemplo: https://youtube.com/watch?v=ABC123 → VIDEO_ID = ABC123 -->
+      <div class="video-card reveal">
+        <div style="aspect-ratio:16/9;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;">
+          <i class="fab fa-youtube" style="font-size:3rem;color:rgba(255,0,0,.5);"></i>
+          <span style="font-size:.85rem;color:var(--gray);text-align:center;padding:0 1rem;">Próximamente — agrega tu primer video</span>
+        </div>
+        <div class="video-card-body">
+          <h4>Reparación de pantalla</h4>
+          <p>Proceso completo de cambio de pantalla</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos-cta reveal">
+      <p style="color:var(--gray);font-size:.9rem;margin-bottom:1rem;">Ve todos nuestros videos en YouTube</p>
+      <a href="https://youtube.com/@felinormar" target="_blank" rel="noopener" class="btn btn-primary">
+        <i class="fab fa-youtube"></i> Ver canal de YouTube
+      </a>
     </div>
   </div>
 </section>
@@ -527,7 +606,7 @@
         </div>
 
         <div style="display:flex;flex-wrap:wrap;gap:.8rem;">
-          <a href="https://maps.app.goo.gl/nin5LneBWoBkrSZz9" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://maps.app.goo.gl/DGCahbE5wsL5DxNm8" target="_blank" rel="noopener" class="btn btn-primary">
             <i class="fas fa-map-location-dot"></i> Abrir en Google Maps
           </a>
           <a href="https://wa.me/522831156502?text=Hola,%20¿me%20puedes%20dar%20indicaciones%20para%20llegar?" target="_blank" class="btn btn-wa">
@@ -539,7 +618,7 @@
       <!-- Mapa embebido -->
       <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(56,163,245,.2);box-shadow:var(--shadow-glow);min-height:380px;">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3797.5!2d-95.4465077!3d17.6401600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDM4JzI0LjYiTiA5NcKwMjYnMzkuNiJX!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d-95.444319!3d17.640339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDM4JzI1LjIiTiA5NcKwMjYnMzkuNiJX!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
           id="mapa-embed"
           width="100%" height="380"
           style="border:0;display:block;"
@@ -563,6 +642,30 @@
         <a href="pages/remoto.html">Remoto</a>
         <a href="pages/seguridad.html">Seguridad</a>
         <a href="pages/cotizacion.html">Cotizar</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+      <!-- Redes sociales -->
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;">
+        <a href="https://www.facebook.com/share/1AgCJ9qk3k/" target="_blank" rel="noopener" aria-label="Facebook"
+           style="width:40px;height:40px;border-radius:10px;background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.3);display:grid;place-items:center;color:#4a9eff;font-size:.95rem;transition:all .3s;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/streem_dr" target="_blank" rel="noopener" aria-label="Instagram"
+           style="width:40px;height:40px;border-radius:10px;background:rgba(225,48,108,.12);border:1px solid rgba(225,48,108,.3);display:grid;place-items:center;color:#f77ab0;font-size:.95rem;transition:all .3s;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@felinormar" target="_blank" rel="noopener" aria-label="TikTok"
+           style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:var(--white);font-size:.95rem;transition:all .3s;">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://youtube.com/@felinormar" target="_blank" rel="noopener" aria-label="YouTube"
+           style="width:40px;height:40px;border-radius:10px;background:rgba(255,0,0,.12);border:1px solid rgba(255,0,0,.28);display:grid;place-items:center;color:#ff6b6b;font-size:.95rem;transition:all .3s;">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://wa.me/522831156502" target="_blank" rel="noopener" aria-label="WhatsApp"
+           style="width:40px;height:40px;border-radius:10px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);display:grid;place-items:center;color:#25d366;font-size:.95rem;transition:all .3s;">
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
       <div class="footer-copy">© 2026 Feli_Normar · Felipe Norberto · Todos los derechos reservados · Nuevo Ixcatlán, Ver.</div>
     </div>
