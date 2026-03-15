@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Verificación de IMEI y Blacklist – Feli_Normar. Consulta si un equipo está reportado como robado antes de comprarlo." />
+  <title>Seguridad / IMEI | Feli_Normar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+  <style>
+    .page-hero { padding: 110px 0 3rem; background: linear-gradient(135deg, var(--navy-mid), var(--navy)); border-bottom: 1px solid rgba(56,163,245,.1); }
+    .back-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--gray); font-size: .85rem; font-weight: 600; margin-bottom: 1.2rem; transition: color var(--transition); }
+    .back-link:hover { color: var(--accent); }
+    .content-section { padding: 3.5rem 0 5rem; }
+    .info-card { background: var(--navy-card); border: 1px solid rgba(56,163,245,.12); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem; }
+    .info-card:hover { border-color: rgba(56,163,245,.3); box-shadow: var(--shadow-glow); }
+    .ic-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .ic-icon { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; background: linear-gradient(135deg, #1a6fc4, #7c0a7c); display: grid; place-items: center; font-size: 1.3rem; color: #fff; box-shadow: 0 4px 14px rgba(26,111,196,.4); }
+    .ic-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 800; color: var(--white); }
+    .ic-subtitle { font-size: .82rem; color: var(--gray); margin-top: .15rem; }
+    .ic-desc { color: var(--gray); font-size: .93rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .feature-list { display: flex; flex-direction: column; gap: .55rem; margin-bottom: 1.2rem; }
+    .feature-item { display: flex; align-items: flex-start; gap: .7rem; font-size: .88rem; color: var(--gray); }
+    .feature-item i { color: var(--accent); margin-top: .15rem; flex-shrink: 0; }
+    .shield-wrap { text-align: center; padding: 2rem 0; }
+    .shield-icon { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, rgba(26,111,196,.4), rgba(0,212,255,.3)); display: grid; place-items: center; margin: 0 auto 1rem; font-size: 2.8rem; color: var(--accent); box-shadow: 0 0 40px rgba(0,212,255,.2); animation: pulse-shield 2.5s ease-in-out infinite; }
+    @keyframes pulse-shield { 0%,100%{box-shadow:0 0 30px rgba(0,212,255,.2)} 50%{box-shadow:0 0 60px rgba(0,212,255,.45)} }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-mobile-screen"></i></div>
+        Feli_<span>Normar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="servicios.html"><i class="fas fa-wrench"></i> Servicios</a></li>
+        <li><a href="remoto.html"><i class="fas fa-globe"></i> Remoto</a></li>
+        <li><a href="seguridad.html" class="active"><i class="fas fa-shield-halved"></i> Seguridad</a></li>
+        <li><a href="cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a></li>
+      </ul>
+      <a href="https://wa.me/522831156502" target="_blank" class="nav-wa btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <a href="servicios.html"><i class="fas fa-wrench"></i> Servicios Locales</a>
+  <a href="remoto.html"><i class="fas fa-globe"></i> Servicio Remoto</a>
+  <a href="seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad / IMEI</a>
+  <a href="cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a>
+  <a href="https://wa.me/522831156502" target="_blank" class="menu-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Inicio</a>
+    <div class="section-label"><i class="fas fa-shield-halved"></i> Seguridad & Verificación</div>
+    <h1 class="section-title">Verificación de IMEI<br>y Blacklist</h1>
+    <p class="section-sub">Antes de comprar un equipo de segunda mano, verifica que no esté reportado como robado o bloqueado.</p>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+
+    <div class="info-card reveal">
+      <div class="ic-header">
+        <div class="ic-icon"><i class="fas fa-shield-halved"></i></div>
+        <div>
+          <div class="ic-title">Consulta de Blacklist / IMEI</div>
+          <div class="ic-subtitle">Verifica antes de comprar</div>
+        </div>
+      </div>
+      <p class="ic-desc">Consulta el estado de cualquier equipo móvil usando su número IMEI. Detecta si está reportado como robado, bloqueado por la operadora o con alguna restricción activa.</p>
+      <div class="feature-list">
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Verificación en bases de datos internacionales</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Resultado rápido — mismo día</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Compatible con equipos de cualquier país</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Evita comprar equipos con problemas legales</div>
+      </div>
+      <a href="https://wa.me/522831156502?text=Hola,%20quiero%20verificar%20el%20IMEI%20de%20un%20equipo." target="_blank" class="btn btn-wa">
+        <i class="fab fa-whatsapp"></i> Solicitar verificación por WhatsApp
+      </a>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="ic-header">
+        <div class="ic-icon" style="background:linear-gradient(135deg,#0a7c4a,#00d4ff)"><i class="fas fa-mobile-screen"></i></div>
+        <div>
+          <div class="ic-title">¿Cómo encontrar tu IMEI?</div>
+          <div class="ic-subtitle">Es fácil y rápido</div>
+        </div>
+      </div>
+      <div class="feature-list">
+        <div class="feature-item"><i class="fas fa-hashtag"></i> Marca <strong style="color:var(--white)">*#06#</strong> en el teclado de tu celular</div>
+        <div class="feature-item"><i class="fas fa-cog"></i> Ve a Ajustes → Acerca del teléfono → Estado</div>
+        <div class="feature-item"><i class="fas fa-box"></i> Revisa la caja original del equipo</div>
+        <div class="feature-item"><i class="fas fa-sim-card"></i> Está impreso en la bandeja del SIM en algunos modelos</div>
+      </div>
+    </div>
+
+    <div class="shield-wrap reveal">
+      <div class="shield-icon"><i class="fas fa-shield-halved"></i></div>
+      <p style="color:var(--gray);font-size:.95rem;max-width:480px;margin:0 auto 1.5rem;">¿Tienes dudas sobre un equipo? Escríbenos con el IMEI y te damos respuesta el mismo día.</p>
+      <a href="https://wa.me/522831156502?text=Hola,%20necesito%20verificar%20un%20IMEI." target="_blank" class="btn btn-primary">
+        <i class="fab fa-whatsapp"></i> Consultar ahora
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Feli_<span>Normar</span></div>
+      <div class="footer-links">
+        <a href="../index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="remoto.html">Remoto</a>
+        <a href="cotizacion.html">Cotizar</a>
+      </div>
+      <div class="footer-copy">© 2026 Feli_Normar · Felipe Norberto · Todos los derechos reservados · Nuevo Ixcatlán, Ver.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/522831156502" target="_blank" id="wa-fab" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); menu.classList.remove('open'); }));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Solicita una cotización de reparación – Feli_Normar. Celulares, PC, impresoras y servicios remotos." />
+  <title>Cotizar | Feli_Normar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+  <style>
+    .page-hero { padding: 110px 0 3rem; background: linear-gradient(135deg, var(--navy-mid), var(--navy)); border-bottom: 1px solid rgba(56,163,245,.1); }
+    .back-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--gray); font-size: .85rem; font-weight: 600; margin-bottom: 1.2rem; transition: color var(--transition); }
+    .back-link:hover { color: var(--accent); }
+    .content-section { padding: 3.5rem 0 5rem; }
+    .form-grid { display: grid; gap: 2rem; }
+    @media (min-width: 768px) { .form-grid { grid-template-columns: 1fr 1.4fr; } }
+    .form-card { background: var(--navy-card); border: 1px solid rgba(56,163,245,.15); border-radius: var(--radius-lg); padding: 2rem; }
+    .form-card h3 { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 1.4rem; display: flex; align-items: center; gap: .6rem; }
+    .form-card h3 i { color: var(--accent); }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: .8rem; font-weight: 700; color: var(--sky); letter-spacing: .04em; text-transform: uppercase; }
+    .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,.05); border: 1px solid rgba(56,163,245,.2); border-radius: 10px; padding: .75rem 1rem; color: var(--white); font-family: var(--font-body); font-size: .92rem; transition: all var(--transition); outline: none; -webkit-appearance: none; }
+    .form-group select { cursor: pointer; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); background: rgba(0,212,255,.05); box-shadow: 0 0 0 3px rgba(0,212,255,.12); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.25); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select option { background: var(--navy-card); color: var(--white); }
+    .btn-submit { width: 100%; padding: .9rem 1.8rem; border-radius: 50px; background: var(--green); color: #fff; font-family: var(--font-body); font-size: .97rem; font-weight: 700; cursor: pointer; border: none; display: flex; align-items: center; justify-content: center; gap: .55rem; transition: all var(--transition); box-shadow: 0 6px 20px rgba(37,211,102,.3); margin-top: 1.2rem; }
+    .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(37,211,102,.5); }
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+    .ci-item { display: flex; align-items: center; gap: .85rem; }
+    .ci-icon { width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0; background: rgba(56,163,245,.12); border: 1px solid rgba(56,163,245,.2); display: grid; place-items: center; color: var(--accent); font-size: 1rem; }
+    .ci-label { font-size: .78rem; color: var(--gray); }
+    .ci-value { font-size: .92rem; font-weight: 600; color: var(--white); }
+    .ci-value a { color: var(--sky); transition: color var(--transition); }
+    .ci-value a:hover { color: var(--accent); }
+    .info-note { background: rgba(0,212,255,.07); border: 1px dashed rgba(0,212,255,.25); border-radius: var(--radius); padding: 1.2rem; margin-top: 1.5rem; font-size: .88rem; color: var(--gray); line-height: 1.6; }
+    .info-note strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-mobile-screen"></i></div>
+        Feli_<span>Normar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="servicios.html"><i class="fas fa-wrench"></i> Servicios</a></li>
+        <li><a href="remoto.html"><i class="fas fa-globe"></i> Remoto</a></li>
+        <li><a href="seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad</a></li>
+        <li><a href="cotizacion.html" class="active"><i class="fas fa-file-invoice"></i> Cotizar</a></li>
+      </ul>
+      <a href="https://wa.me/522831156502" target="_blank" class="nav-wa btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <a href="servicios.html"><i class="fas fa-wrench"></i> Servicios Locales</a>
+  <a href="remoto.html"><i class="fas fa-globe"></i> Servicio Remoto</a>
+  <a href="seguridad.html"><i class="fas fa-shield-halved"></i> Seguridad / IMEI</a>
+  <a href="cotizacion.html"><i class="fas fa-file-invoice"></i> Cotizar</a>
+  <a href="https://wa.me/522831156502" target="_blank" class="menu-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Inicio</a>
+    <div class="section-label"><i class="fas fa-file-invoice-dollar"></i> Cotización</div>
+    <h1 class="section-title">Solicita tu<br>Cotización</h1>
+    <p class="section-sub">Cuéntanos qué necesitas y te respondemos por WhatsApp con el precio y tiempo estimado.</p>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <div class="form-grid">
+
+      <!-- Info de contacto -->
+      <div class="reveal">
+        <div class="section-label" style="margin-bottom:1rem;"><i class="fas fa-address-card"></i> Contacto directo</div>
+        <p style="color:var(--gray);font-size:.93rem;line-height:1.7;margin-bottom:1.5rem;">
+          Puedes enviarnos el formulario o contactarnos directamente. Respondemos el mismo día.
+        </p>
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-value"><a href="https://wa.me/522831156502" target="_blank">+52 283 115 6502</a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="ci-label">Ubicación</div>
+              <div class="ci-value"><a href="https://maps.app.goo.gl/oEcyVdW6i9ugbWaA8" target="_blank" rel="noopener">Nuevo Ixcatlán, Veracruz</a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="ci-label">Horario de atención</div>
+              <div class="ci-value">Lun – Sáb · 9:00 – 19:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-note">
+          <strong>Diagnóstico sin costo</strong> en la mayoría de los casos. El precio final se confirma después de revisar el equipo.
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="form-card reveal">
+        <h3><i class="fas fa-paper-plane"></i> Enviar solicitud</h3>
+        <form id="cotizacion-form" onsubmit="enviarCotizacion(event)">
+          <div class="form-group">
+            <label for="nombre">Tu nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Felipe Norberto" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">WhatsApp / Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+52 283 000 0000" required />
+          </div>
+          <div class="form-group">
+            <label for="servicio">Tipo de servicio</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Selecciona un servicio…</option>
+              <option>Cambio de pantalla</option>
+              <option>Puerto de carga</option>
+              <option>Cambio de batería</option>
+              <option>Reparación de impresora</option>
+              <option>Mantenimiento de PC / Laptop</option>
+              <option>Software / Virus / Windows</option>
+              <option>Desbloqueo FRP (remoto)</option>
+              <option>Liberación de red</option>
+              <option>Verificación IMEI / Blacklist</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="equipo">Marca y modelo del equipo</label>
+            <input type="text" id="equipo" name="equipo" placeholder="Ej: Samsung Galaxy A54" />
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Describe el problema</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Cuéntanos qué le pasa a tu equipo…" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Feli_<span>Normar</span></div>
+      <div class="footer-links">
+        <a href="../index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="remoto.html">Remoto</a>
+        <a href="seguridad.html">Seguridad</a>
+      </div>
+      <div class="footer-copy">© 2026 Feli_Normar · Felipe Norberto · Todos los derechos reservados · Nuevo Ixcatlán, Ver.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/522831156502" target="_blank" id="wa-fab" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); menu.classList.remove('open'); }));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function enviarCotizacion(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const servicio = document.getElementById('servicio').value;
+    const equipo = document.getElementById('equipo').value.trim();
+    const descripcion = document.getElementById('descripcion').value.trim();
+    const msg = `Hola Feli_Normar, quiero solicitar una cotización:%0A%0A*Nombre:* ${encodeURIComponent(nombre)}%0A*Teléfono:* ${encodeURIComponent(telefono)}%0A*Servicio:* ${encodeURIComponent(servicio)}%0A*Equipo:* ${encodeURIComponent(equipo || 'No especificado')}%0A*Problema:* ${encodeURIComponent(descripcion)}`;
+    window.open(`https://wa.me/522831156502?text=${msg}`, '_blank');
+  }
+</script>
+</body>
+</html>
